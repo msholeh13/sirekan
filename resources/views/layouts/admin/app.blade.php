@@ -61,26 +61,26 @@
                 <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">
+            <li class="nav-item {{ request()->is('dashboard') ? 'active' : '' }}">
+              <a class="nav-link" href="{{route('dashboard')}}">
                 <span class="menu-title">Dashboard</span>
                 <i class="mdi mdi-home menu-icon"></i>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/data">
+            <li class="nav-item {{ request()->is('data') ? 'active' : '' }}">
+              <a class="nav-link" href="{{route('data')}}">
                 <span class="menu-title">Data</span>
                 <i class="mdi mdi-database menu-icon"></i>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/data">
+            <li class="nav-item {{ request()->is('bobot') ? 'active' : '' }}">
+              <a class="nav-link" href="{{route('weight')}}">
                 <span class="menu-title">Bobot</span>
                 <i class="mdi mdi-format-list-bulleted menu-icon"></i>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/data">
+            <li class="nav-item {{ request()->is('recommendation') ? 'active' : '' }}">
+              <a class="nav-link" href="/">
                 <span class="menu-title">Rekomendasi</span>
                 <i class="mdi mdi-chart-bar menu-icon"></i>
               </a>
@@ -109,7 +109,8 @@
     <script src="{{ asset('assets/js/dashboard.js') }}"></script> 
     <script src="{{ asset('assets/js/misc.js') }}"></script> 
     <script src="{{ asset('assets/js/settings.js') }}"></script>
-
+    <script src="{{ asset('assets/js/sweetalert2.js') }}"></script>
+    @include('sweetalert2::index')
 
     {{-- aditional js after base js --}}
     @stack('after-script')
