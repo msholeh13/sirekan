@@ -15,13 +15,13 @@ class WeightSeeder extends Seeder
     {
         Weight::insert([
             [
-                'name'          => 'calorie',
+                'name'          => 'calories',
                 'value'         => 0.25,
                 'created_at'    => now(),
                 'updated_at'    => now(),
             ],
             [
-                'name'          => 'protein',
+                'name'          => 'proteins',
                 'value'         => 0.25,
                 'created_at'    => now(),
                 'updated_at'    => now(),

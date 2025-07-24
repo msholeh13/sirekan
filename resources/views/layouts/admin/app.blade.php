@@ -47,18 +47,17 @@
         <!-- partial:partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
-            <li class="nav-item nav-profile">
-              <a href="#" class="nav-link">
-                <div class="nav-profile-image">
+            <li class="nav-item nav-profile text-center">
+              <a href="#" class="nav-link d-flex flex-column">
+                <div class="nav-profile-image mb-2">
                   <img src="{{asset('assets/img/face/face1.jpg')}}" alt="profile" />
                   <span class="login-status online"></span>
                   <!--change to offline or busy as needed-->
                 </div>
-                <div class="nav-profile-text d-flex flex-column">
+                <div class="d-flex flex-column">
                   <span class="font-weight-bold mb-2">Admin</span>
                   <span class="text-secondary text-small">Project Manager</span>
                 </div>
-                <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
               </a>
             </li>
             <li class="nav-item {{ request()->is('dashboard') ? 'active' : '' }}">
@@ -79,8 +78,8 @@
                 <i class="mdi mdi-format-list-bulleted menu-icon"></i>
               </a>
             </li>
-            <li class="nav-item {{ request()->is('recommendation') ? 'active' : '' }}">
-              <a class="nav-link" href="/">
+            <li class="nav-item {{ request()->is('rekomendasi') ? 'active' : '' }}">
+              <a class="nav-link" href="{{route('recommendation')}}">
                 <span class="menu-title">Rekomendasi</span>
                 <i class="mdi mdi-chart-bar menu-icon"></i>
               </a>
