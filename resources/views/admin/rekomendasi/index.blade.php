@@ -80,7 +80,11 @@
         <div class="col-md-6 grid-margin stretch-card">
             <div class="card">
                 <div class="col-4 m-3 align-self-center text-center">
-                    <img src="<?= isset($topResults) ? $topResults[0]->item->image : "https://placehold.co/300x200" ?>" 
+                    <img src="@isset($topResults)
+                            {{ asset("storage/" . $topResults[0]->item->image) }}
+                        @else
+                            https://placehold.co/300x200
+                        @endisset" 
                         class="card-img-top" 
                         alt="<?= isset($topResults) ? $topResults[0]->item->name : "gambar" ?>">
                     <h4><?= isset($topResults) ? $topResults[0]->item->name : "Nama" ?></h4>
@@ -152,7 +156,13 @@
                                         <td> {{ $topResult->item->fat }} </td>
                                         <td> {{ $topResult->item->carbohydrate }} </td>
                                         <td>
-                                            <img src="<?= isset($topResults) ? $topResult->item->image : "https://placehold.co/300x200" ?>" class="me-2" alt="image">
+                                            <img src="@isset($topResults)
+                                                    {{ asset("storage/" . $topResult->item->image) }}
+                                                @else
+                                                    https://placehold.co/300x200
+                                                @endisset" 
+                                                class="me-2" 
+                                                alt="image">
                                         </td>
                                         <td> {{ $topResult->similarity }} </td>
                                     </tr>

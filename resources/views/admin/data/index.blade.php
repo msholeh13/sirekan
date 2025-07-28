@@ -64,8 +64,7 @@
                                         <td> {{ $row->fat }} </td>
                                         <td> {{ $row->carbohydrate }} </td>
                                         <td>
-                                            {{-- <img src="{{ $row->image }}" class="me-2" alt="image"> --}}
-                                            gambar
+                                            <img src="{{ asset("storage/" .$row->image) }}" class="me-2" alt="image">
                                         </td>
                                         <td class="d-flex gap-3">
                                             <a href="" class="text-primary btn-edit" 

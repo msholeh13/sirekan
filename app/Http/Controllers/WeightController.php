@@ -19,10 +19,10 @@ class WeightController extends Controller
     {
 
         $validate =  $request->validate([
-            'calorie'       => 'required|numeric',
-            'protein'       => 'required|numeric',
-            'fat'           => 'required|numeric',
-            'carbohydrate'  => 'required|numeric',
+            'calorie'       => 'required|numeric|min:0',
+            'protein'       => 'required|numeric|min:0',
+            'fat'           => 'required|numeric|min:0',
+            'carbohydrate'  => 'required|numeric|min:0',
         ]);
 
         $total = $request->calorie + $request->protein + $request->fat + $request->carbohydrate;

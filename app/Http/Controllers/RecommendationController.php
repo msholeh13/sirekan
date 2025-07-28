@@ -83,10 +83,10 @@ class RecommendationController extends Controller
     {
 
         $validate = $request->validate([
-            'calories'      => 'nullable|numeric',
-            'proteins'      => 'nullable|numeric',
-            'fat'           => 'nullable|numeric',
-            'carbohydrate'  => 'nullable|numeric',
+            'calories'      => 'nullable|numeric|min:0',
+            'proteins'      => 'nullable|numeric|min:0',
+            'fat'           => 'nullable|numeric|min:0',
+            'carbohydrate'  => 'nullable|numeric|min:0',
         ]);
 
         $response = $this->findRecommendation($request);

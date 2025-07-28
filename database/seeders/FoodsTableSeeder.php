@@ -13,7 +13,7 @@ class FoodsTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $csvFile = database_path('data/nutrition.csv');
+        $csvFile = database_path('data/data_with_local_images.csv');
         $file = fopen($csvFile, 'r');
 
         $isHeader = true;
@@ -31,7 +31,7 @@ class FoodsTableSeeder extends Seeder
                 'fat'           => $row[3],
                 'carbohydrate'  => $row[4],
                 'name'          => $row[5],
-                'image'         => $row[6],
+                'image'         => 'images/' . $row[7],
                 'created_at'    => now(),
                 'updated_at'    => now()
             ];

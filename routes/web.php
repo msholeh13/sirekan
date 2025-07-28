@@ -6,7 +6,7 @@ use App\Http\Controllers\RecommendationController;
 use App\Http\Controllers\WeightController;
 
 Route::get('/', function () {
-    return view('admin.index');
+    return view('user.index');
 });
 
 Route::get('/dashboard', function () {

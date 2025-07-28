@@ -28,10 +28,10 @@ class DataController extends Controller
 
         $validate = $request->validate([
             'name'          => 'required|unique:foods,name',
-            'calories'      => 'required|numeric',
-            'proteins'      => 'required|numeric',
-            'fat'           => 'required|numeric',
-            'carbohydrate'  => 'required|numeric',
+            'calories'      => 'required|numeric|min:0',
+            'proteins'      => 'required|numeric|min:0',
+            'fat'           => 'required|numeric|min:0',
+            'carbohydrate'  => 'required|numeric|min:0',
             'image'         => 'required|image',
         ]);
 
@@ -91,10 +91,10 @@ class DataController extends Controller
 
         $validate = $request->validate([
             'name'          => 'required|unique:foods,name',
-            'calories'      => 'required|numeric',
-            'proteins'      => 'required|numeric',
-            'fat'           => 'required|numeric',
-            'carbohydrate'  => 'required|numeric',
+            'calories'      => 'required|numeric|min:0',
+            'proteins'      => 'required|numeric|min:0',
+            'fat'           => 'required|numeric|min:0',
+            'carbohydrate'  => 'required|numeric|min:0',
         ]);
 
         if ($request->image != null) {
