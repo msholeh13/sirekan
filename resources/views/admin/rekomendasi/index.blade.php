@@ -26,9 +26,9 @@
                     <form class="forms-sample" method="POST" action="{{ route('recommendation.find') }}">
                         @csrf
                         <div class="form-group row">
-                            <label for="calories" class="col-sm-3 col-form-label">Kalori</label>
-                            <div class="col-sm-9">
-                                <input type="text" name="calories" class="form-control @error('calories') is-invalid @enderror" xid="calories" placeholder="0" value="{{old('calories')}}">
+                            <label for="calories" class="col-12 col-lg-4 col-form-label">Kalori <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="jumlah kalori (dalam kal) per 100 gram makanan/minuman"></i></label>
+                            <div class="col-12 col-lg-8">
+                                <input type="text" name="calories" class="form-control @error('calories') is-invalid @enderror" xid="calories" placeholder="0 gr/100gr" value="{{old('calories')}}">
                                 @error('calories')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -37,9 +37,9 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="proteins" class="col-sm-3 col-form-label">Protein <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i></label>
-                            <div class="col-sm-9">
-                                <input type="text" name="proteins" class="form-control @error('proteins') is-invalid @enderror" id="proteins" placeholder="0" value="{{old('proteins')}}">
+                            <label for="proteins" class="col-12 col-lg-4 col-form-label">Protein <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title=" jumlah protein (dalam gram) per 100 gram makanan/minuman"></i></label>
+                            <div class="col-12 col-lg-8">
+                                <input type="text" name="proteins" class="form-control @error('proteins') is-invalid @enderror" id="proteins" placeholder="0 gr/100gr" value="{{old('proteins')}}">
                                 @error('proteins')
                                 <div class="invalid-feedback">
                                     {{$message}}
@@ -48,9 +48,9 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="fat" class="col-sm-3 col-form-label">Lemak <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i></label>
-                            <div class="col-sm-9">
-                                <input type="text" name="fat" class="form-control @error('fat') is-invalid @enderror" id="fat" placeholder="0" value="{{old('fat')}}">
+                            <label for="fat" class="col-12 col-lg-4 col-form-label">Lemak <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="jumlah lemak (dalam gram) per 100 gram makanan/minuman"></i></label>
+                            <div class="col-12 col-lg-8">
+                                <input type="text" name="fat" class="form-control @error('fat') is-invalid @enderror" id="fat" placeholder="0 gr/100gr" value="{{old('fat')}}">
                                 @error('fat')
                                 <div class="invalid-feedback">
                                     {{$message}}
@@ -59,9 +59,9 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="carbohydrate" class="col-sm-3 col-form-label">Karbohidrat <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i></label>
-                            <div class="col-sm-9">
-                                <input type="text" name="carbohydrate" class="form-control @error('carbohydrate') is-invalid @enderror" id="carbohydrate" placeholder="0" value="{{old('carbohydrate')}}">
+                            <label for="carbohydrate" class="col-12 col-lg-4 col-form-label">Karbohidrat <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="jumlah karbohidrat (dalam gram) per 100 gram makanan/minuman"></i></label>
+                            <div class="col-12 col-lg-8">
+                                <input type="text" name="carbohydrate" class="form-control @error('carbohydrate') is-invalid @enderror" id="carbohydrate" placeholder="0 gr/100gr" value="{{old('carbohydrate')}}">
                                 @error('carbohydrate')
                                 <div class="invalid-feedback">
                                     {{$message}}
@@ -69,6 +69,7 @@
                                 @enderror
                             </div>
                         </div>
+
                         <div class="d-flex justify-content-end">
                             <button type="submit" class="btn btn-gradient-primary me-2">Cari</button>
                         </div>
@@ -92,32 +93,32 @@
                 <div class="card-body pt-0">
                     <p class="card-text fw-bold">Deskripsi :</p>
                     <div class="row">
-                        <label for="" class="col-sm-3 col-form-label">Kalori</label>
-                        <div class="col-sm-9">
+                        <label for="" class="col-12 col-lg-3 col-form-label">Kalori</label>
+                        <div class="col-12 col-lg-9">
                             <input type="text" name="" class="form-control" id="" value="<?= isset($topResults) ? $topResults[0]->item->calories : "0" ?>" @readonly(true)>
                         </div>
                     </div>
                     <div class="row">
-                        <label for="" class="col-sm-3 col-form-label">Protein</label>
-                        <div class="col-sm-9">
+                        <label for="" class="col-12 col-lg-3 col-form-label">Protein</label>
+                        <div class="col-12 col-lg-9">
                             <input type="text" name="" class="form-control" id="" value="<?= isset($topResults) ? $topResults[0]->item->proteins : "0" ?>" @readonly(true)>
                         </div>
                     </div>
                     <div class="row">
-                        <label for="" class="col-sm-3 col-form-label">Lemak</label>
-                        <div class="col-sm-9">
+                        <label for="" class="col-12 col-lg-3 col-form-label">Lemak</label>
+                        <div class="col-12 col-lg-9">
                             <input type="text" name="" class="form-control" id="" value="<?= isset($topResults) ? $topResults[0]->item->fat : "0" ?>" @readonly(true)>
                         </div>
                     </div>
                     <div class="row">
-                        <label for="" class="col-sm-3 col-form-label">Karbohidrat</label>
-                        <div class="col-sm-9">
+                        <label for="" class="col-12 col-lg-3 col-form-label">Karbohidrat</label>
+                        <div class="col-12 col-lg-9">
                             <input type="text" name="" class="form-control" id="" value="<?= isset($topResults) ? $topResults[0]->item->carbohydrate : "0" ?>"@readonly(true)>
                         </div>
                     </div>
                     <div class="row">
-                        <label for="" class="col-sm-3 col-form-label">Nilai Similarity <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i></label>
-                        <div class="col-sm-9">
+                        <label for="" class="col-12 col-lg-3 col-form-label">Similarity <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Hasil perhitungan nilai similarity"></i></label>
+                        <div class="col-12 col-lg-9">
                             <input type="text" name="" class="form-control" id="" value="<?= isset($topResults) ? $topResults[0]->similarity : "0" ?>" @readonly(true)>
                         </div>
                     </div>
@@ -188,5 +189,9 @@
         </script>
     @endif
 
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
   
 @endpush

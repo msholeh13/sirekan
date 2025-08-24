@@ -8,12 +8,15 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
 
+  <link rel="icon" href="{{asset('assets/img/user/logoUser.png')}}">
+
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
+  <link rel="stylesheet" href="{{ asset('assets/vendors/mdi/css/materialdesignicons.min.css') }}">
   <link href="{{ asset('assets/vendors/user/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/vendors/user/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/vendors/user/aos/aos.css') }}" rel="stylesheet">
@@ -76,7 +79,7 @@
 
       <a href="{{ url('') }}" class="logo d-flex align-items-center me-auto me-xl-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <img src="{{asset('assets/img/user/logoUser.png')}}" alt="">
         <h1 class="sitename">SIREKAN</h1>
         <span>.</span>
       </a>
@@ -86,7 +89,7 @@
           <li><a href="#hero" class="active">Home<br></a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#data">Data</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact">Kontak</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -104,12 +107,12 @@
             <h1 data-aos="fade-up">Cari Makanan Sehat<br>Dan Lezat Anda</h1>
             <p data-aos="fade-up" data-aos-delay="100">Selamat Datang di sistem rekomendasi makanan khas Indonesia</p>
             <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-              <a href="{{ url('#menu') }}" class="btn-get-started">Cari Sekarang</a>
+              <a href="{{ url('#data') }}" class="btn-get-started">Cari Sekarang</a>
               <a href="https://youtu.be/aKtb7Y3qOck?si=TwX8FAWvOBvnRYgo" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Lihat Video</span></a>
             </div>
           </div>
           <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
-            <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+            <img src="{{asset('assets/img/user/home.png')}}" class="img-fluid animated" alt="">
           </div>
         </div>
       </div>
@@ -129,10 +132,10 @@
 
         <div class="row gy-4">
           <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/about.jpg" class="img-fluid mb-4" alt="">
+            <img src="{{asset('assets/img/user/about1.jpg')}}" class="img-fluid mb-4" alt="">
             <div class="book-a-table">
-              <h3>Book a Table</h3>
-              <p>+1 5589 55488 55</p>
+              <h3>Dari Sabang Sampai Merauke</h3>
+              <p>Beragam Cita Rasa, Satu Jiwa</p>
             </div>
           </div>
           <div class="col-lg-5" data-aos="fade-up" data-aos-delay="250">
@@ -150,8 +153,8 @@
               </p>
 
               <div class="position-relative mt-4">
-                <img src="assets/img/about-2.jpg" class="img-fluid" alt="">
-                <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
+                <img src="{{asset('assets/img/user/about2.jpg')}}" class="img-fluid" alt="">
+                <a href="https://youtu.be/cbD_yqfYx9g?si=uWtc7a0R_GO_lTKY" class="glightbox pulsating-play-btn"></a>
               </div>
             </div>
           </div>
@@ -164,7 +167,7 @@
     <!-- Stats Section -->
     <section id="stats" class="stats section dark-background">
 
-      <img src="assets/img/stats-bg.jpg" alt="" data-aos="fade-in">
+      <img src="{{asset('assets/img/user/stats.jpg')}}" alt="" data-aos="fade-in">
 
       <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
 
@@ -172,14 +175,14 @@
 
           <div class="col-lg-6 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="1436" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="1000" data-purecounter-duration="1" class="purecounter"></span>
               <p>Jumlah Data</p>
             </div>
           </div><!-- End Stats Item -->
 
           <div class="col-lg-6 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="1436" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="1000" data-purecounter-duration="1" class="purecounter"></span>
               <p>Jumlah Data</p>
             </div>
           </div><!-- End Stats Item -->
@@ -206,7 +209,7 @@
         <div class="mb-3 d-flex justify-content-end">
           <div class="col-12 col-md-4">
             <div class="input-group">
-              <button class="btn btn-primary" id="searchBtn">Cari</button>
+              <button class="btn btn-danger btnData" id="searchBtn">Cari</button>
               <input type="text" id="searchInput" class="form-control" placeholder="Cari makanan...">
             </div>
           </div>
@@ -217,38 +220,39 @@
           <form id="recommendationForm" action="" method="POST" class="col-12 col-lg-2 border rounded p-2">
             <p class="fs-5 fs-md-4 fw-bolder mb-3">Rekomendasi</p>
             <div class="mb-3">
-              <label for="calories" class="form-label">Kalori</label>
-              <input type="number" min="0" step="1" class="form-control" id="calories" placeholder="0" value="0">
+              <label for="calories" class="form-label">Kalori <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="jumlah kalori (dalam kal) per 100 gram makanan/minuman"></i></label>
+              <input type="number" min="0" step="1" class="form-control" id="calories" placeholder="0 gr/100gr">
                 <div class="invalid-feedback">Harap masukkan nilai kalori yang valid: number, min 0</div>
             </div>
             <div class="mb-3">
-              <label for="proteins" class="form-label">Protein</label>
-              <input type="number" min="0" step="1" class="form-control" id="proteins" placeholder="0" value="0">
+              <label for="proteins" class="form-label">Protein <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title=" jumlah protein (dalam gram) per 100 gram makanan/minuman"></i></label>
+              <input type="number" min="0" step="1" class="form-control" id="proteins" placeholder="0 gr/100gr">
                 <div class="invalid-feedback">Harap masukkan nilai protein yang valid: number, min 0</div>
             </div>
             <div class="mb-3">
-              <label for="fat" class="form-label">Lemak</label>
-              <input type="number" min="0" step="1" class="form-control" id="fat" placeholder="0" value="0">
+              <label for="fat" class="form-label">Lemak <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="jumlah lemak (dalam gram) per 100 gram makanan/minuman"></i></label>
+              <input type="number" min="0" step="1" class="form-control" id="fat" placeholder="0 gr/100gr">
                 <div class="invalid-feedback">Harap masukkan nilai lemak yang valid: number, min 0</div>
             </div>
             <div class="mb-3">
-              <label for="carbohydrate" class="form-label">Karbohidrat</label>
-              <input type="number" min="0" step="1" class="form-control" id="carbohydrate" placeholder="0" value="0">
+              <label for="carbohydrate" class="form-label">Karbohidrat <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="jumlah karbohidrat (dalam gram) per 100 gram makanan/minuman"></i></label>
+              <input type="number" min="0" step="1" class="form-control" id="carbohydrate" placeholder="0 gr/100gr">
                 <div class="invalid-feedback">Harap masukkan nilai karbohidrat yang valid: number, min 0</div>
             </div>
             <div class="d-flex justify-content-end" id="buttonRecommendation">
               <button type="button" id="resetBtn" class="btn btn-secondary me-2" style="display: none">Reset</button>
-              <button type="submit" class="btn btn-primary me-2">Cari</button>
+              <button type="submit" class="btn btn-danger me-2 btnData">Cari</button>
             </div>
           </form>
           <div class="col-12 col-lg-10">
             <div id="foodGrid" class="row g-3">
               <!-- card akan dimasukkan disini -->
             </div>
+             <!-- Trigger div untuk lazy load -->
+        <div id="loadMoreBtn" class="text-center mt-3 load-more rounded">Loading more...</div>
           </div>
         </div>
-        <!-- Trigger div untuk lazy load -->
-        <div id="loadMoreBtn" class="text-center mt-3">Loading more...</div>
+       
       </div>
     </section><!-- /Menu Section -->
   
@@ -257,34 +261,34 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p><span>Need Help?</span> <span class="description-title">Contact Us</span></p>
+        <h2>Kontak</h2>
+        <p><span>Butuh Bantuan?</span> <span class="description-title">Hubungi Kami</span></p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="mb-5">
-          <iframe style="width: 100%; height: 400px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen=""></iframe>
+          <iframe style="width: 100%; height:400px"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253035.74013013058!2d110.48894728014905!3d-7.7170747074857164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a416389cafa5d%3A0x3027a76e352bad0!2sKlaten%2C%20Kabupaten%20Klaten%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1753706365764!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div><!-- End Google Maps -->
 
-    
-        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="600">
+{{--     
+        <form action="" method="get" class="php-email-form" data-aos="fade-up" data-aos-delay="600">
           <div class="row gy-4">
 
             <div class="col-md-6">
-              <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+              <input type="text" name="name" class="form-control" placeholder="Your Name" >
             </div>
 
             <div class="col-md-6 ">
-              <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+              <input type="email" class="form-control" name="email" placeholder="Your Email" >
             </div>
 
             <div class="col-md-12">
-              <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+              <input type="text" class="form-control" name="subject" placeholder="Subject" >
             </div>
 
             <div class="col-md-12">
-              <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+              <textarea class="form-control" name="message" rows="6" placeholder="Message" ></textarea>
             </div>
 
             <div class="col-md-12 text-center">
@@ -296,7 +300,7 @@
             </div>
 
           </div>
-        </form><!-- End Contact Form -->
+        </form><!-- End Contact Form --> --}}
 
       </div>
 
@@ -311,9 +315,9 @@
         <div class="col-lg-3 col-md-6 d-flex">
           <i class="bi bi-geo-alt icon"></i>
           <div class="address">
-            <h4>Address</h4>
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
+            <h4>Alamat</h4>
+            <p>Klaten Utara</p>
+            <p>Klaten, Jawa Tengah</p>
             <p></p>
           </div>
 
@@ -322,10 +326,10 @@
         <div class="col-lg-3 col-md-6 d-flex">
           <i class="bi bi-telephone icon"></i>
           <div>
-            <h4>Contact</h4>
+            <h4>Kontak</h4>
             <p>
-              <strong>Phone:</strong> <span>+1 5589 55488 55</span><br>
-              <strong>Email:</strong> <span>info@example.com</span><br>
+              <strong>Telepon:</strong> <span>+62 857 2990 0000</span><br>
+              <strong>Email:</strong> <span>testing@example.com</span><br>
             </p>
           </div>
         </div>
@@ -333,16 +337,16 @@
         <div class="col-lg-3 col-md-6 d-flex">
           <i class="bi bi-clock icon"></i>
           <div>
-            <h4>Opening Hours</h4>
+            <h4>Jam Buka</h4>
             <p>
-              <strong>Mon-Sat:</strong> <span>11AM - 23PM</span><br>
-              <strong>Sunday</strong>: <span>Closed</span>
+              <strong>Sen-Sab:</strong> <span>Setiap Saat</span><br>
+              <strong>Minggu</strong>: <span>Healing</span>
             </p>
           </div>
         </div>
 
         <div class="col-lg-3 col-md-6">
-          <h4>Follow Us</h4>
+          <h4>Ikuti Kami</h4>
           <div class="social-links d-flex">
             <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
             <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -355,13 +359,13 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Yummy</strong> <span>All Rights Reserved</span></p>
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Bang M</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you've purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
+        Didesain oleh <a href="https://bootstrapmade.com/">BootstrapMade</a> Didistribusikan oleh <a href="https://themewagon.com">ThemeWagon</a> Diedit oleh <a href="https://github.com/msholeh13">Bang M</a>
       </div>
     </div>
 
@@ -378,7 +382,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 id="foodModalLabel" class="modal-title"></h5>
+          <p id="foodModalLabel" class="modal-title fs-3 fw-bold"></p>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body" id="foodModalBody">
@@ -399,7 +403,10 @@
   <script src="{{ asset('assets/js/user/main.js') }}"></script>
   <script src="{{ asset('assets/js/user/myScript.js') }}"></script>
 
-
+  <script>
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+  </script>
 
 </body>
 

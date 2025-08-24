@@ -44,7 +44,7 @@ function renderFoods() {
         const col = document.createElement("div");
         col.className = "col-6 col-md-3 ";
         col.innerHTML = `
-          <div class='card h-100 food-card' data-id="${item.id}">
+          <div class='card h-100 food-card' data-id="${item.id}" style="cursor:pointer;">
             <div class='card-body text-center p-2'>
               <img src="${item.image}"
                 class = "card-img-top mb-2 lazy-image"
@@ -200,8 +200,10 @@ function calculateSimilarity(userNeeds, foodItem, maxValues, weights) {
     let similarity = 0;
 
     for (const key in weights) {
-        const diff =
-            Math.abs(userNeeds[key] - foodItem[key]) / maxValues[key] || 1;
+        const userVal = userNeeds[key] || 0;
+        const foodVal = foodItem[key] || 0;
+        const maxVal = maxValues[key] || 1;
+        const diff = maxVal === 0 ? 0 : Math.abs(userVal - foodVal) / maxVal;
         const attrSimilarity = 1 - diff;
         similarity += weights[key] * attrSimilarity;
     }
@@ -212,7 +214,7 @@ function calculateSimilarity(userNeeds, foodItem, maxValues, weights) {
 async function getRecommendation(userNeeds) {
     try {
         const [foodsRes, weightsRes, maxValuesRes] = await Promise.all([
-            fetch("/api/datas"),
+            fetch("/api/datas?fresh=" + new Date().getTime()), // Tambah timestamp untuk hindari cache
             fetch("/api/weights"),
             fetch("/api/max-values"),
         ]);
@@ -285,7 +287,11 @@ async function handleRecommendationForm(evemt) {
                 parseFloat(document.getElementById("carbohydrate").value) || 0,
         };
 
+        console.log("User needs", userNeeds);
+
         const recommendations = await getRecommendation(userNeeds);
+
+        console.log("recommendations", recommendations);
 
         isInRecommendationMode = true;
         filteredFoods = recommendations;
@@ -334,3 +340,29 @@ document.addEventListener("DOMContentLoaded", () => {
         .getElementById("recommendationForm")
         .addEventListener("submit", handleRecommendationForm);
 });
+
+// ===============================================================
+
+// purecounter
+
+let pureCounterInstance = null;
+
+async function updateTotalData(url) {
+    let response = await fetch(url)
+        .then((res) => res.json())
+        .then((data) => data.length);
+
+    let totalData = document.querySelectorAll(".purecounter");
+
+    if (pureCounterInstance) {
+        pureCounterInstance.destroy();
+    }
+
+    totalData.forEach((data) => {
+        data.setAttribute("data-purecounter-end", response);
+    });
+
+    pureCounterInstance = new PureCounter();
+}
+
+updateTotalData("/api/datas");

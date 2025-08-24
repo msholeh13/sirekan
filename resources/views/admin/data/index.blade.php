@@ -101,13 +101,13 @@
             <form action="{{ route('data.add') }}" method="POST" enctype="multipart/form-data" class="modal-content">
                 @csrf
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="changeLabel">Tambah Data</h1>
+                    <h1 class="modal-title fs-5" id="changeLabel">Tambah Data <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="jumlah kalori, protein, lemak dan karbohidrat (dalam kal) per 100 gram makanan/minuman"></i></h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="form-floating mb-3">
                         <input type="text" name="name" class="form-control rounded @error('name') is-invalid @enderror" id="floatingInput" placeholder=" " value="{{ old('name') }}">
-                        <label for="floatingInput">Nama</label>
+                        <label for="floatingInput">Nama </label>
                         @error('name')
                             <div class="invalid-feedback">
                                 {{$message}}
@@ -174,7 +174,7 @@
                 @csrf
                 @method('PUT')
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="changeLabel">Lihat Data</h1>
+                    <h1 class="modal-title fs-5" id="changeLabel">Lihat Data <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="jumlah kalori, protein, lemak dan karbohidrat (dalam kal) per 100 gram makanan/minuman"></i></h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -321,5 +321,12 @@
                 })
             })
         });
+    </script>
+@endpush
+
+@push('after-script')
+      <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
     </script>
 @endpush

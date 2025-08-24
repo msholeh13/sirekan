@@ -42,10 +42,10 @@ class FoodAPIController extends Controller
     public function getMaxValues()
     {
         return response()->json([
-            'calories' => Food::max('calories'),
-            'proteins' => Food::max('proteins'),
-            'fat' => Food::max('fat'),
-            'carbohydrate' => Food::max('carbohydrate'),
+            'calories' => Food::max('calories') ?? 1,
+            'proteins' => Food::max('proteins') ?? 1,
+            'fat' => Food::max('fat') ?? 1,
+            'carbohydrate' => Food::max('carbohydrate') ?? 1,
         ]);
     }
 
