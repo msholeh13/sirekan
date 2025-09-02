@@ -19,19 +19,19 @@ class WeightController extends Controller
     {
 
         $validate =  $request->validate([
-            'calorie'       => 'required|numeric|min:0',
-            'protein'       => 'required|numeric|min:0',
+            'calories'       => 'required|numeric|min:0',
+            'proteins'       => 'required|numeric|min:0',
             'fat'           => 'required|numeric|min:0',
             'carbohydrate'  => 'required|numeric|min:0',
         ]);
 
-        $total = $request->calorie + $request->protein + $request->fat + $request->carbohydrate;
+        $total = $request->calories + $request->proteins + $request->fat + $request->carbohydrate;
 
         if ($total != 1) {
             return back()->withErrors(['total' => 'Total bobot harus sama dengan 1'])->withInput();
         }
 
-        $fields = ['calorie', 'protein', 'fat', 'carbohydrate'];
+        $fields = ['calories', 'proteins', 'fat', 'carbohydrate'];
 
         foreach ($fields as $field) {
             $insertToDB = Weight::where('name', $field)->update(['value' => $request->$field]);

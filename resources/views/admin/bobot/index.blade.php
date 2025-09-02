@@ -69,7 +69,7 @@
                     @endif
 
                     <div class="form-floating mb-3">
-                        <input type="text" name="calorie" class="form-control rounded @error('calorie') is-invalid @enderror" id="floatingInput" placeholder="0.0" value="{{$weight[0]['value']}}">
+                        <input type="text" name="calories" class="form-control rounded @error('calorie') is-invalid @enderror" id="floatingInput" placeholder="0.0" value="{{$weight[0]['value']}}">
                         <label for="floatingInput">Kalori</label>
                         @error('calorie')
                             <div class="invalid-feedback">
@@ -78,7 +78,7 @@
                         @enderror
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" name="protein" class="form-control rounded @error('protein') is-invalid @enderror" id="floatingInput" placeholder="0.0"  value="{{$weight[1]['value']}}">
+                        <input type="text" name="proteins" class="form-control rounded @error('protein') is-invalid @enderror" id="floatingInput" placeholder="0.0"  value="{{$weight[1]['value']}}">
                         <label for="floatingPassword">Protein</label>
                         @error('protein')
                             <div class="invalid-feedback">

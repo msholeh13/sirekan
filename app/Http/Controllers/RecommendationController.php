@@ -16,7 +16,7 @@ class RecommendationController extends Controller
 
 
     // rumus menghitung similarity
-    public function calculateSingularity(array $userNeeds, array $foodItem, array $maxValues, array $weights)
+    public function calculateSimilarity(array $userNeeds, array $foodItem, array $maxValues, array $weights)
     {
         $similarity = 0;
         foreach ($weights as $key => $weight) {
@@ -55,7 +55,7 @@ class RecommendationController extends Controller
                 'carbohydrate'  => $item->carbohydrate,
             ];
 
-            $similarity = $this->calculateSingularity($userNeeds, $foodData, $maxValues, $weights);
+            $similarity = $this->calculateSimilarity($userNeeds, $foodData, $maxValues, $weights);
 
             $results[] = [
                 'item'          => $item,
